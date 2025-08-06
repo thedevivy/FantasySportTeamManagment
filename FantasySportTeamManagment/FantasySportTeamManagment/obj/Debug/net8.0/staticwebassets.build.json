@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "h+f3TiYPcBe1ODdM5Jte8TMzUDE91MVZJXDxGfJmcCM=",
+  "Source": "FantasySportTeamManagment",
+  "BasePath": "_content/FantasySportTeamManagment",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FantasySportTeamManagment\\wwwroot",
+      "Source": "FantasySportTeamManagment",
+      "ContentRoot": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\",
+      "BasePath": "_content/FantasySportTeamManagment",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\index.html",
+      "SourceId": "FantasySportTeamManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\",
+      "BasePath": "_content/FantasySportTeamManagment",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

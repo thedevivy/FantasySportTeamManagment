@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Sports Team Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        input, select {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+            .results pre {
+                background: #eee;
+                padding: 10px;
+                border-radius: 4px;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fantasy Sports Team Management</h1>
+        <p>Manage your teams, draft players, and track performance!</p>
+    </header>
+    <div id="notification" class="notification"></div>
+
+    <section id="team-management">
+        <h2>Team Management</h2>
+
+        <div class="team-list-box">
+            <div class="team-list" id="teamList">
+            </div>
+
+        </div>
+        <form id="update-team-form" style="display: none;">
+            <h3>Update Team Name</h3>
+            <label for="update-team-id">Team ID</label>
+            <input type="text" id="update-team-id" readonly>
+
+            <label for="update-team-name">New Team Name</label>
+            <input type="text" id="update-team-name" placeholder="Enter new team name" required>
+
+            <button type="submit">Update Team</button>
+
+        </form>
+
+        <form id="create-team-form">
+            <label for="team-name">Create a New Team</label>
+            <input type="text" id="team-name" placeholder="Enter team name" required>
+            <button type="submit">Create Team</button>
+            <div class="results" id="team-results"></div>
+        </form>
+
+        <form id="get-roster-form">
+            <label for="team-id">Get Team Roster</label>
+            <input type="text" id="team-id" placeholder="Enter team id" required>
+            <button type="submit">Get team rosters</button>
+            <table id="roster-table">
+                <!-- Table content will be dynamically populated -->
+            </table>
+        </form>
+
+
+    </section>
+
+
+    <section id="player-management">
+        <h2>Player Management</h2>
+        <form id="draft-player-form">
+            <label for="player-id">Draft a Player</label>
+            <input type="number" id="player-id" placeholder="Enter player ID" required>
+            <label for="team-id">For Team ID</label>
+            <input type="number" id="team-id" placeholder="Enter team ID" required>
+            <button type="submit">Draft Player</button>
+        </form>
+        <div class="results" id="player-results"></div>
+    </section>
+
+    <section id="performance-tracking">
+        <h2>Performance Tracking</h2>
+        <div class="results" id="competition-results"></div>
+        <button id="simulate-competition">Simulate Competition</button>
+        <button id="get-all-stats">Get All Stats</button>
+        <h3>Update Performance Stat</h3>
+        <form id="update-stat-form">
+            <input type="number" id="update-id" placeholder="Stat ID" required>
+            <input type="number" id="update-points" placeholder="Points" required>
+            <input type="number" id="update-assists" placeholder="Assists" required>
+            <input type="number" id="update-fouls" placeholder="Fouls" required>
+            <button type="submit">Update Stat</button>
+        </form>
+
+
+    </section>
+
+
+
+    <script>
+
+
+        // Service URLs
+        const TEAM_SERVICE_URL = 'https://fantasysportsteammanagementsystem.azurewebsites.net';
+        const PLAYER_SERVICE_URL = 'https://player-management-service.azurewebsites.net';
+        const PERFORMANCE_SERVICE_URL = 'https://performance-tracking-service.azurewebsites.net';
+
+        // Localhost
+        //const TEAM_SERVICE_URL = 'https://localhost:7217';
+        //const PLAYER_SERVICE_URL = 'https://localhost:7246';
+        //const PERFORMANCE_SERVICE_URL = "https://localhost:7296";
+
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.backgroundColor = type === 'success' ? '#28a745' : '#dc3545';
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        async function getAllTeam() {
+            try {
+                const response = await fetch(`${TEAM_SERVICE_URL}/api/Team`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                const teams = await response.json();
+                const teamList = document.getElementById('teamList');
+
+                if (!teams || teams.length === 0) {
+                    teamList.innerHTML = '<p style="text-align: center; color: #666;">No teams</p>';
+                    return;
+                }
+
+                // Create a table to display teams and their rosters
+                let tableHTML = `
+                    <table >
+                        <thead>
+                            <tr>
+                                <th>Team ID</th>
+                                <th>Team Name</th>
+                                <th>Created At</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                for (const team of teams) {
+
+
+                    // Add team row with roster details
+                    tableHTML += `
+                        <tr>
+                            <td>${team.id}</td>
+                            <td>${team.teamName}</td>
+                            <td>${team.createdAt}</td>
+                           <td> <button onclick="showUpdateForm(${team.id}, '${team.teamName}')">Update</button> <td>
+                        </tr>
+                    `;
+                }
+
+                tableHTML += '</tbody></table>';
+                teamList.innerHTML = tableHTML;
+            } catch (error) {
+                console.error('Error loading teams:', error);
+                document.getElementById('teamList').innerHTML =
+                    `<p style="text-align: center; color: #dc3545;">Error loading teams. Please try again later.</p>`;
+            }
+        }
+
+        function showUpdateForm(teamId, currentName) {
+            // Populate the update form with team details
+            document.getElementById('update-team-id').value = teamId;
+            document.getElementById('update-team-name').value = currentName;
+            document.getElementById('update-team-form').style.display = 'block';
+        }
+
+        document.getElementById('update-team-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const teamId = document.getElementById('update-team-id').value;
+            const newTeamName = document.getElementById('update-team-name').value;
+
+            try {
+                const response = await fetch(`${TEAM_SERVICE_URL}/api/Team/update/${teamId}?newName=${newTeamName}`, {
+                    method: 'PUT'
+                });
+
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+                showNotification(`Team updated successfully! Team ID: ${data.id}, Name: ${data.teamName}`);
+                //document.getElementById('update-team-results').innerHTML =
+                //    `<p style="color: #28a745;">Team updated successfully! Team ID: ${data.id}, Name: ${data.teamName}</p>`;
+                getAllTeam(); // Refresh team list
+            } catch (error) {
+                console.error('Error updating team:', error);
+                showNotification('Error updating team. Please try again.');
+                //document.getElementById('update-team-results').innerHTML =
+                //    `<p style="color: #dc3545;">Error updating team. Please try again.</p>`;
+            }
+        });
+        getAllTeam();
+
+        document.getElementById("get-roster-form").addEventListener("submit", async (e) => {
+            e.preventDefault(); // Prevent the form from submitting the traditional way
+            const rosterTable = document.getElementById("roster-table");
+            rosterTable.innerHTML = ''; // Clear any existing data
+            const teamId = parseInt(document.getElementById("team-id").value, 10);
+
+            // Validate teamId (it should be a valid number and greater than 0)
+            if (isNaN(teamId) || teamId <= 0) {
+                showNotification('Invalid Team ID. Please provide a valid team ID.', 'error');
+                return;
+            }
+
+            try {
+                // Modify the fetch URL to match the back-end endpoint
+                const response = await fetch(`${TEAM_SERVICE_URL}/api/Team/${teamId}/roster`);
+
+                // Check if the response is OK (status code 200-299)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Handle the response data (if successful)
+                if (data.players && data.players.length > 0) {
+                    showNotification(`Team rosters fetched successfully! 🎉`, 'success');
+
+                    // Populate the team roster table
+
+
+                    // Create table headers
+                    const headerRow = document.createElement('tr');
+                    const headers = ['Player ID', 'Name', 'Position'];
+                    headers.forEach(headerText => {
+                        const th = document.createElement('th');
+                        th.textContent = headerText;
+                        headerRow.appendChild(th);
+                    });
+                    rosterTable.appendChild(headerRow);
+
+                    // Add each player to the table
+                    data.players.forEach(player => {
+                        const row = document.createElement('tr');
+
+                        const playerIdCell = document.createElement('td');
+                        playerIdCell.textContent = player.playerId;
+                        row.appendChild(playerIdCell);
+
+                        const playerNameCell = document.createElement('td');
+                        playerNameCell.textContent = player.name;
+                        row.appendChild(playerNameCell);
+
+                        const playerPositionCell = document.createElement('td');
+                        playerPositionCell.textContent = player.position;
+                        row.appendChild(playerPositionCell);
+
+                        rosterTable.appendChild(row);
+                    });
+                } else {
+                    rosterTable.innerHTML = `No players found for team [${data.teamName}].`;
+                    // showNotification(`No players found for team: ${data.teamName}.`, 'info');
+                }
+
+            } catch (error) {
+                console.error('Error Fetching team rosters:', error);
+                showNotification('Failed to fetch team rosters. Please try again.', 'error');
+            }
+        })
+
+
+        // Attach the createTeam function to the form submission event
+        document.getElementById("create-team-form").addEventListener("submit", async (e) => {
+            e.preventDefault(); // Prevent default form submission
+            document.getElementById("team-results").innerHTML = '';
+            const teamName = document.getElementById("team-name").value;
+
+            // Validate team name
+            if (!teamName) {
+                showNotification("Please enter a team name.", 'error');
+                return;
+            }
+
+            try {
+                // Send a POST request to the backend to create the team
+                const response = await fetch(`${TEAM_SERVICE_URL}/api/Team/create?teamName=${teamName}`, {
+                    method: "POST",
+                });
+
+                // Check if the response is successful (status code 2xx)
+                if (!response.ok) {
+                    const errorData = await response.json(); // Capture error response body
+                    showNotification(errorData.Message || `Error: HTTP status ${response.message}`, 'error');
+                    return;
+                }
+
+                // Parse the successful response
+                const result = await response.json();
+
+                // Display the result in the results section
+                document.getElementById("team-results").innerHTML = `<pre>${JSON.stringify(result, null, 2)}</pre>`;
+
+                // Show a success notification
+                showNotification(`Team '${teamName}' created successfully! 🎉`);
+            } catch (error) {
+                // Catch any errors (e.g., network issues)
+                console.error('Error creating team:', error);
+                showNotification(`Failed to create team.${error.message}`, 'error');
+            }
+            getAllTeam();
+
+        });
+
+
+
+        // Draft a player
+        document.getElementById("draft-player-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const playerId = document.getElementById("player-id").value;
+            const teamId = document.getElementById("team-id").value;
+
+            const response = await fetch(`${PLAYER_SERVICE_URL}/players/draft`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ playerId: Number(playerId), teamId: Number(teamId) })
+            });
+
+            const result = await response.json();
+            document.getElementById("player-results").innerHTML = `<pre>${JSON.stringify(result, null, 2)}</pre>`;
+        });
+
+        // Simulate competition
+        document.getElementById("simulate-competition").addEventListener("click", async () => {
+
+            const response = await fetch(`${PERFORMANCE_SERVICE_URL}/api/competitions/simulate`, { method: "POST" });
+            const results = await response.json();
+
+            const container = document.getElementById("competition-results");
+            container.innerHTML = '';
+            const list = document.createElement('ul');
+
+            results.forEach(stat => {
+                const item = document.createElement('li');
+                item.innerHTML = `
+                                    Team ID: ${stat.teamId},
+                                    Player ID: ${stat.playerId},
+                                    Team Name: ${stat.teamName},
+                                    Player Name: ${stat.playerName},
+                                    Position: ${stat.position},
+                                    Points: ${stat.points},
+                                    Assists: ${stat.assists},
+                                    Fouls: ${stat.fouls}
+                                `;
+                list.appendChild(item);
+            });
+
+            container.appendChild(list);
+        });
+        // Fetch all performance stats
+        document.getElementById("get-all-stats").addEventListener("click", async () => {
+            const response = await fetch(`${PERFORMANCE_SERVICE_URL}/api/competitions`, { method: "GET" });
+            const stats = await response.json();
+
+            const resultsContainer = document.getElementById("competition-results");
+            resultsContainer.innerHTML = '';  // Clear existing content
+            const list = document.createElement('ul');
+
+            stats.forEach(stat => {
+                const item = document.createElement('li');
+                item.innerHTML = `
+                                    ID: ${stat.id}, Team ID: ${stat.teamId}, Player ID: ${stat.playerId},
+                                    Team Name: ${stat.teamName}, Player Name: ${stat.playerName},
+                                    Points: ${stat.points}, Assists: ${stat.assists}, Fouls: ${stat.fouls}
+                                `;
+                list.appendChild(item);
+            });
+
+            resultsContainer.appendChild(list);
+        });
+
+        // Update a specific performance stat
+        document.getElementById("update-stat-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const id = document.getElementById("update-id").value;
+            const points = parseInt(document.getElementById("update-points").value, 10);
+            const assists = parseInt(document.getElementById("update-assists").value, 10);
+            const fouls = parseInt(document.getElementById("update-fouls").value, 10);
+
+            const response = await fetch(`${PERFORMANCE_SERVICE_URL}/api/competitions/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ points, assists, fouls })
+            });
+
+            if (response.ok) {
+                alert("Stat updated successfully!");
+                document.getElementById("get-all-stats").click(); // Refresh the list
+            } else {
+                const errorText = await response.text(); // To get the error message from the server
+                alert(`Failed to update stat: ${errorText}`);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wS9Ie6/bcffJsvVjdZ6krSFD5c1npMcWjnjwH65DyRg=",
+  "Source": "PerformanceTrackingService",
+  "BasePath": "_content/PerformanceTrackingService",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

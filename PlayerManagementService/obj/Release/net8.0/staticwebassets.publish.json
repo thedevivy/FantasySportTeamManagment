@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6M+TzY55kXGyq1k1PniX1xYDPfeaKvVs99+Kaa5P7qY=",
+  "Source": "PlayerManagementService",
+  "BasePath": "_content/PlayerManagementService",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

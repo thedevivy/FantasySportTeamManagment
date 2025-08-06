@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "CJaeiBZ+BIdQbZPfGF55GjoIFrEWrV4JWraK3e6gKrw=",
+  "Source": "PerformanceTrackingService",
+  "BasePath": "_content/PerformanceTrackingService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

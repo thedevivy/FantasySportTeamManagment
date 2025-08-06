@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{866E8235-1B62-42AC-B2D1-65D5C710A30D}|FantasySportTeamManagment\\FantasySportTeamManagment.csproj|c:\\users\\jy229\\onedrive\\desktop\\fantasysportteammanagment\\fantasysportteammanagment\\fantasysportteammanagment\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{866E8235-1B62-42AC-B2D1-65D5C710A30D}|FantasySportTeamManagment\\FantasySportTeamManagment.csproj|solutionrelative:fantasysportteammanagment\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|c:\\users\\jy229\\onedrive\\desktop\\fantasysportteammanagment\\fantasysportteammanagment\\performancetrackingservice\\model\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|solutionrelative:performancetrackingservice\\model\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|c:\\users\\jy229\\onedrive\\desktop\\fantasysportteammanagment\\fantasysportteammanagment\\performancetrackingservice\\controllers\\competitionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|solutionrelative:performancetrackingservice\\controllers\\competitionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|c:\\users\\jy229\\onedrive\\desktop\\fantasysportteammanagment\\fantasysportteammanagment\\performancetrackingservice\\model\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|solutionrelative:performancetrackingservice\\model\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|c:\\users\\jy229\\onedrive\\desktop\\fantasysportteammanagment\\fantasysportteammanagment\\performancetrackingservice\\model\\performancestat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|solutionrelative:performancetrackingservice\\model\\performancestat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|c:\\users\\jy229\\onedrive\\desktop\\fantasysportteammanagment\\fantasysportteammanagment\\performancetrackingservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|solutionrelative:performancetrackingservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|c:\\users\\jy229\\onedrive\\desktop\\fantasysportteammanagment\\fantasysportteammanagment\\performancetrackingservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C665FD-4A9B-4C2E-9F82-A87E6A09EFB7}|PerformanceTrackingService\\PerformanceTrackingService.csproj|solutionrelative:performancetrackingservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "FantasySportTeamManagment\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\index.html",
+              "RelativeToolTip": "FantasySportTeamManagment\\wwwroot\\index.html",
+              "ViewState": "AQIAANYAAAAAAAAAAAAAAAcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-12-07T02:04:41.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Model\\Player.cs",
+              "RelativeDocumentMoniker": "PerformanceTrackingService\\Model\\Player.cs",
+              "ToolTip": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Model\\Player.cs",
+              "RelativeToolTip": "PerformanceTrackingService\\Model\\Player.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T01:47:41.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Team.cs",
+              "DocumentMoniker": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Model\\Team.cs",
+              "RelativeDocumentMoniker": "PerformanceTrackingService\\Model\\Team.cs",
+              "ToolTip": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Model\\Team.cs",
+              "RelativeToolTip": "PerformanceTrackingService\\Model\\Team.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T01:47:33.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PerformanceStat.cs",
+              "DocumentMoniker": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Model\\PerformanceStat.cs",
+              "RelativeDocumentMoniker": "PerformanceTrackingService\\Model\\PerformanceStat.cs",
+              "ToolTip": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Model\\PerformanceStat.cs",
+              "RelativeToolTip": "PerformanceTrackingService\\Model\\PerformanceStat.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA3wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T01:47:19.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "PerformanceTrackingService\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Properties\\launchSettings.json",
+              "RelativeToolTip": "PerformanceTrackingService\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-07T01:24:07.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CompetitionsController.cs",
+              "DocumentMoniker": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Controllers\\CompetitionsController.cs",
+              "RelativeDocumentMoniker": "PerformanceTrackingService\\Controllers\\CompetitionsController.cs",
+              "ToolTip": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Controllers\\CompetitionsController.cs",
+              "RelativeToolTip": "PerformanceTrackingService\\Controllers\\CompetitionsController.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAswF0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T03:55:22.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Program.cs",
+              "RelativeDocumentMoniker": "PerformanceTrackingService\\Program.cs",
+              "ToolTip": "C:\\Users\\jy229\\OneDrive\\Desktop\\FantasySportTeamManagment\\FantasySportTeamManagment\\PerformanceTrackingService\\Program.cs",
+              "RelativeToolTip": "PerformanceTrackingService\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T03:54:55.833Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

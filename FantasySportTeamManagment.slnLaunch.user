@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "FantasySportTeamManagment\\FantasySportTeamManagment.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "PlayerManagementService\\PlayerManagementService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "PerformanceTrackingService\\PerformanceTrackingService.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

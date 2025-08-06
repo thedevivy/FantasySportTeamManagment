@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "PlayerManagementService.Controllers.PlayerController",
+    "Method": "DraftPlayer",
+    "RelativePath": "api/Player/draft",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PlayerManagementService.Model.DraftPlayerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlayerManagementService.Controllers.PlayerController",
+    "Method": "GetTeamRoaster",
+    "RelativePath": "api/Player/getTeamRoaster",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlayerManagementService.Controllers.PlayerController",
+    "Method": "ReleasePlayer",
+    "RelativePath": "api/Player/release",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PlayerManagementService.Model.DraftPlayerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

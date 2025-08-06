@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "Mwq1tK7hUXBZSHoCaKHCbOlh6ONgDaoTsbEgylmH54I=",
+  "Source": "FantasySportTeamManagment",
+  "BasePath": "_content/FantasySportTeamManagment",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FantasySportTeamManagment\\wwwroot",
+      "Source": "FantasySportTeamManagment",
+      "ContentRoot": "C:\\Users\\oscar\\source\\repos\\FinalProject\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\",
+      "BasePath": "_content/FantasySportTeamManagment",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\oscar\\source\\repos\\FinalProject\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\index.html",
+      "SourceId": "FantasySportTeamManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\oscar\\source\\repos\\FinalProject\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\",
+      "BasePath": "_content/FantasySportTeamManagment",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

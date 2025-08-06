@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\oscar\\source\\repos\\FinalProject\\FantasySportTeamManagment\\FantasySportTeamManagment\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FantasySportTeamManagment.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FantasySportTeamManagment.props",
+      "PackagePath": "build\\FantasySportTeamManagment.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FantasySportTeamManagment.props",
+      "PackagePath": "buildMultiTargeting\\FantasySportTeamManagment.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FantasySportTeamManagment.props",
+      "PackagePath": "buildTransitive\\FantasySportTeamManagment.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
